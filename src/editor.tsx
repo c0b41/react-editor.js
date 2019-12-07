@@ -1,9 +1,9 @@
 import React from 'react';
-import EditorJS, { EditorConfig, OutputData } from '@editorjs/editorjs';
+import EditorJS, { OutputData } from '@editorjs/editorjs';
 
-export interface WrapperProps extends EditorConfig {
+export interface WrapperProps {
   reinitOnPropsChange?: boolean;
-  onData?: (data: OutputData) => void;
+  onChange?: (data: OutputData) => void;
 }
 
 export class EditorWrapper extends React.PureComponent<WrapperProps> {
@@ -52,14 +52,11 @@ export class EditorWrapper extends React.PureComponent<WrapperProps> {
   }
 
   handleChange = async () => {
-    const { onChange, onData } = this.props;
+    const { onChange } = this.props;
+
 
     if (onChange && typeof onChange === 'function') {
-      onChange();
-    }
-
-    if (onData && typeof onData === 'function') {
-      this.emitDataEvent(onData);
+      this.emitDataEvent(onChange);
     }
   };
 
