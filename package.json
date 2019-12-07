@@ -1,6 +1,6 @@
 {
   "name": "@c0b41/react-editor.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "React wrapper component for Editor.js",
   "main": "dist/react-editorjs.js",
   "umd:main": "dist/react-editorjs.umd.js",
@@ -41,6 +41,6 @@
     "react": "^16.x"
   },
   "dependencies": {
-    "@editorjs/editorjs": "^2.12.4"
+    "@editorjs/editorjs": "^2.16.1"
   }
 }
